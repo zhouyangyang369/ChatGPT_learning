@@ -55,3 +55,5 @@ Attention機構は「文章内のどの単語に注意を払うべきか」と�
 - Transformer　⇒　その学習がTransformerで行われたということで
 
 ちなみに、Google社のBERTもTransformerで学習したモデルです。BERTはBidirectional Encoder Representations from Transformersの略となり、こちらも、Bidirectional Encoder Representations(双方向のエンコード表現)がBERTの技術的特徴(文章を文頭と文末から双方向に学習するような仕組み)を表したものだということになります。
+つまり、TransformerとGPT、BERTさらに、両社の関連サービスの関係は以下のようになると思います。
+![image](https://github.com/user-attachments/assets/6f70cda8-aa2c-4f62-8ce9-17271eaf462c)
