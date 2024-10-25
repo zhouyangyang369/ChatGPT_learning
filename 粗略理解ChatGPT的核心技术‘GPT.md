@@ -42,3 +42,16 @@ RNNのネットワークを改造して、長期記憶の仕組みを組み込�
 # Attention
 Attention機構は「文章内のどの単語に注意を払うべきか」という点に着目し、各単語に重み付をするような処理を行い、各単語間の関係性や文脈の特徴を表す機構です。各単語間の関係性や文脈の特徴を表す機構という観点ではRNNもそうですよね？と思われますよね。そうです同じなので、AttentionはRNNの補助的な役割として、RNNと併用する形で実装されていました。
 ![image](https://github.com/user-attachments/assets/bb22c4e3-e964-4784-a98b-c7212e75df5d)
+
+# Transformerの登場
+ただ、LSTM、Attentionともに、RNNがベースになっています。RNNを使っている限り、並列処理ができない⇒なので大規模データの学習ができない⇒なのでモデルの精度は結局あまり改善されなかった、というのが歴史的な経緯です。
+
+そこで、思い切ってRNNはあきらめ、もともと補助的に組み込まれていたAttentionを、文脈把握と単語間の関係性把握のためのメインの機構としてフル活用することにより、RNNの大きな課題であった並列処理と長期記憶の問題を解決したTransformerが開発されました。
+
+# GPTの登場
+実はこのTransformerこそがGPTです。GPTはGenerative Pretrained Transformerの略。
+- Generative　⇒　生成的という意味を持ち、文章生成能力が高いということを指しています。
+- Pretrained　⇒　事前学習済み、つまり、Open AI社によって、膨大な学習データで既に学習済のモデルだということを指しています。
+- Transformer　⇒　その学習がTransformerで行われたということで
+
+ちなみに、Google社のBERTもTransformerで学習したモデルです。BERTはBidirectional Encoder Representations from Transformersの略となり、こちらも、Bidirectional Encoder Representations(双方向のエンコード表現)がBERTの技術的特徴(文章を文頭と文末から双方向に学習するような仕組み)を表したものだということになります。
