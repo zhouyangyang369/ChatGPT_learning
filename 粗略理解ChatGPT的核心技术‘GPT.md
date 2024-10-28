@@ -57,3 +57,25 @@ Attention機構は「文章内のどの単語に注意を払うべきか」と�
 ちなみに、Google社のBERTもTransformerで学習したモデルです。BERTはBidirectional Encoder Representations from Transformersの略となり、こちらも、Bidirectional Encoder Representations(双方向のエンコード表現)がBERTの技術的特徴(文章を文頭と文末から双方向に学習するような仕組み)を表したものだということになります。
 つまり、TransformerとGPT、BERTさらに、両社の関連サービスの関係は以下のようになると思います。
 ![image](https://github.com/user-attachments/assets/6f70cda8-aa2c-4f62-8ce9-17271eaf462c)
+
+# Transformerの仕組み
+### エンコーダーとデコーダー
+![image](https://github.com/user-attachments/assets/b41427b0-fdfc-4349-81f3-d06470e6acc8)
+- そして、Encoderで作られたベクトルはDecoderに入力されます。Decoderはこの入力文章のベクトルを受けて、その文章の後に続く単語(関連性の高い単語)を推論する計算を行い、最終的に最も可能性の高い単語を出力します。
+- 自然言語のベクトル化は、画像データや音声データのようなシンプルな手法では実現できません。これらの文章とベクトルの変換処理の過程で、文脈や単語間の関係性をベクトルに反映するための様々な処理があります。
+
+# エンコーダー側の処理
+![image](https://github.com/user-attachments/assets/1eae5a47-245d-43ca-90e8-3dd36758ad71)
+1. Input Embedding
+2. Positional Encoding
+3. Encoder Attention (Self Attention)
+
+# デコーダー側の処理
+4. デコーダーでのSelf Attention
+5. デコーダーでのCross Attention
+  - エンコーダーが行ったSelf Attentionの結果も考慮したいため、Cross Attentionと呼ばれる別のタイプのAttentionの計算を行います。
+![image](https://github.com/user-attachments/assets/d902f73a-2fdc-4d3a-bb76-2ce039617441)
+
+
+# 長文を出力できる仕組み
+![image](https://github.com/user-attachments/assets/1371d23e-50ba-4c59-a147-3cb85c534948)
