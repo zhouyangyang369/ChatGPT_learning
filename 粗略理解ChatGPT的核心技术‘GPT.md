@@ -71,7 +71,13 @@ Attention機構は「文章内のどの単語に注意を払うべきか」と�
 3. Encoder Attention (Self Attention)
 
 # デコーダー側の処理
+![image](https://github.com/user-attachments/assets/a5b9fec1-16cf-42a7-8663-8b5fd9c0c36b)
+
 4. デコーダーでのSelf Attention
+  - エンコーダーとデコーダでSelf Attentionを行う目的が違うということです。
+  - エンコーダーは入力文全体の情報を把握できるようにエンコードするのに対して、デコーダーは文脈や依存関係を考慮して次の単語を生成する必要があります。
+![image](https://github.com/user-attachments/assets/883e9e4b-22c4-4ddf-abea-3d6069bbf952)
+
 5. デコーダーでのCross Attention
   - エンコーダーが行ったSelf Attentionの結果も考慮したいため、Cross Attentionと呼ばれる別のタイプのAttentionの計算を行います。
 ![image](https://github.com/user-attachments/assets/d902f73a-2fdc-4d3a-bb76-2ce039617441)
